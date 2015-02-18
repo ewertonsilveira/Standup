@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+ <body>
+
+ 	<div style="margin-top:70px;"></div>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="#">Virtual Stand-up</a>
+	        </div>
+	        <div class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+	                <li><a href="/">Home</a></li>
+	                <li><a href="/Notes">New Note</a></li>
+                    <li class="active"><a href="/Members">Member</a></li>
+	                <li><a href="/discuss">Discuss</a></li>
+	            </ul>
+	        </div><!--/.nav-collapse -->
+	    </div>
+	</div>
+
+	<div class="container">
+
+    <div class="text-center">
+        <h1>New Member for Stand-up Meeting Notes</h1>        
+    </div>
+
+    {% if message.length > 0 %}
+        <div class="alert alert-danger alert-error">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    <form class="form-horizontal" action="Members" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Enter a new Member</legend>
+
+            <!-- input -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="memberName">Member Name?</label>
+                <div class="col-md-6">
+                    <input class="form-control" id="memberName" name="memberName"></input>
+                </div>
+            </div>
+
+            <!-- input -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="age">Age?</label>
+                <div class="col-md-6">
+                    <input class="form-control" id="age" name="age"></input>
+                </div>
+            </div>
+
+            <!-- input -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email">Email?</label>
+                <div class="col-md-6">
+                    <input class="form-control" id="email" name="email"></input>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="btnSaveNote">Create member</label>
+                <div class="col-md-4">
+                    <button id="btnSaveNote" name="btnSaveNote" class="btn btn-primary" type="submit">Create</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+
+</div><!-- /.container -->
+</body>
+</html>
